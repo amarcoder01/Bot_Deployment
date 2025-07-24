@@ -1,0 +1,111 @@
+# Core Web Framework
+aiohttp==3.12.14
+uvicorn==0.35.0
+waitress==3.0.2
+starlette==0.47.1
+
+# Telegram Bot
+python-telegram-bot==20.7
+
+# AI/ML Services
+openai==1.97.0
+
+# Data Processing & Analysis
+pandas==2.3.1
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.0
+
+# Financial Data
+yfinance==0.2.65
+
+# Database
+peewee==3.18.2
+SQLAlchemy==2.0.41
+psycopg2-binary==2.9.9
+
+# Caching & Performance
+redis==6.2.0
+python-redis-lock==4.0.0
+
+# Configuration & Environment
+python-dotenv==1.1.1
+PyYAML==6.0.2
+
+# HTTP Requests
+requests==2.32.4
+
+# Date/Time Handling
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzlocal==5.3.1
+
+# Monitoring & Metrics
+prometheus_client==0.22.1
+psutil==7.0.0
+
+# Security & Validation
+cryptography==44.0.0
+pydantic==2.11.7
+pydantic_core==2.33.2
+
+# Scheduling
+schedule==1.2.2
+
+# Logging
+python-json-logger==3.3.0
+
+# PDF Processing
+PyPDF2==3.0.1
+pdf2image==1.17.0
+pytesseract==0.3.13
+Pillow==11.3.0
+
+# Mathematical Operations
+sympy==1.14.0
+
+# Portfolio Optimization
+pyportfolioopt==1.5.6
+Riskfolio-Lib==7.0.1
+
+# Technical Analysis
+TA-Lib==0.4.32
+
+# Deep Learning (CPU version for Render)
+torch==2.7.1
+torchvision==0.20.1
+torchaudio==2.7.1
+
+# Quantitative Finance
+qlib==0.9.6
+
+# Visualization
+matplotlib==3.10.0
+seaborn==0.13.2
+plotly==5.24.1
+
+# Additional ML/Finance Libraries
+TA-Lib==0.4.32
+xgboost==3.0.2
+
+# Utilities
+tqdm==4.67.1
+tenacity==9.1.2
+termcolor==3.1.0
+typing_extensions==4.14.1
+
+# Production Server
+gunicorn==23.0.0
+
+# Additional Dependencies
+websockets==15.0.1
+websocket-client==1.8.0
+urllib3==2.5.0
+charset-normalizer==3.4.1
+certifi==2024.12.14
+idna==3.10
+
+# System and Utility
+patsy==1.0.1
+statsmodels==0.14.5
+xlsxwriter==3.2.5
