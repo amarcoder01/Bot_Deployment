@@ -64,7 +64,8 @@ Thumbs.db
 
 # Data files
 data/
-qlib_data/
+# Allow all qlib_data files as requested
+# qlib_data/
 *.csv
 *.json
 *.pkl
