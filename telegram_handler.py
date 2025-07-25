@@ -434,13 +434,13 @@ Try `/price AAPL` or just ask: "How is Apple performing today?"
 • `/price AAPL` - Get Apple's current price
 • `/price TSLA` - Get Tesla's current price
 • `/price SPY` - Get S&P 500 ETF price
-• `/price BTC` - Get Bitcoin price
+• `/price BTC-USD` - Get Bitcoin price
 
 **📈 VIEW CHARTS:**
 • `/chart AAPL` - See Apple's price chart
 • `/chart TSLA 1M` - Tesla chart for 1 month
 • `/chart NVDA 6M` - NVIDIA chart for 6 months
-• `/chart GOOG 1Y` - S&P 500 chart for 1 year
+• `/chart SPY 1Y` - S&P 500 chart for 1 year
 
 **🤖 GET AI ANALYSIS:**
 • `/analyze AAPL` - AI analysis of Apple
