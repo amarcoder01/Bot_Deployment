@@ -76,7 +76,7 @@ torchvision==0.16.1
 torchaudio==2.1.1
 
 # Quantitative Finance
-qlib==0.9.4
+# qlib==0.9.4  # Removed: Not compatible with Python 3.10+
 
 # Visualization
 matplotlib==3.7.4
