@@ -1,51 +1,41 @@
-import asyncio
 import sys
+import asyncio
+import yfinance as yf
+import pandas as pd
+sys.path.append('C:\\bot_d')
 sys.path.append('C:\\bot_d\\TradeAiCompanion')
-from market_data_service import MarketDataService
-import logging
+from TradeAiCompanion.market_data_service import MarketDataService
 
-# Reduce logging noise
-logging.basicConfig(level=logging.WARNING)
+async def test():
+    # First check direct yfinance data
+    print("\n=== Direct YFinance Test ===")
+    ticker = yf.Ticker('AAPL')
+    hist_1d = ticker.history(period='1d', interval='1d')
+    hist_1m = ticker.history(period='1d', interval='1m')
+    print(f"1d interval data available: {not hist_1d.empty}")
+    print(f"1m interval data available: {not hist_1m.empty}")
+    if not hist_1d.empty:
+        print(f"1d Volume: {hist_1d['Volume'].iloc[-1]}")
+    if not hist_1m.empty:
+        print(f"1m Latest Volume: {hist_1m['Volume'].iloc[-1]}")
+        print(f"1m Volume is zero: {hist_1m['Volume'].iloc[-1] == 0}")
+        print(f"All 1m volumes are zero: {(hist_1m['Volume'] == 0).all()}")
+        # Print the last 5 rows of the 1m data
+        print("\nLast 5 rows of 1m data:")
+        print(hist_1m.tail())
+    
+    # Now test through market data service
+    print("\n=== Market Data Service Test ===")
+    market_service = MarketDataService()
+    price_data = await market_service.get_stock_price('AAPL')
+    print('Symbol:', price_data.get('symbol', 'N/A'))
+    print('Price:', price_data.get('price', 'N/A'))
+    print('Change:', price_data.get('change', 'N/A'))
+    print('Change Percent:', price_data.get('change_percent', 'N/A'))
+    print('Volume:', price_data.get('volume', 'N/A'))
+    print('Market Cap:', price_data.get('market_cap', 'N/A'))
+    print('PE Ratio:', price_data.get('pe_ratio', 'N/A'))
+    print('Source:', price_data.get('source', 'N/A'))
 
-async def test_market_data():
-    ms = MarketDataService()
-    
-    print("Testing market data fetching...\n")
-    
-    # Test SPY
-    spy = await ms.get_stock_price('SPY')
-    print(f'SPY data: {spy}\n')
-    
-    # Test QQQ
-    qqq = await ms.get_stock_price('QQQ')
-    print(f'QQQ data: {qqq}\n')
-    
-    # Test VIX
-    vix = await ms.get_stock_price('^VIX')
-    print(f'VIX data: {vix}\n')
-    
-    # Test what the _get_market_context would return
-    print("Market context calculation:")
-    spy_performance = spy.get('change_percent', 0) if spy else 0
-    qqq_performance = qqq.get('change_percent', 0) if qqq else 0
-    vix_level = vix.get('price', 20) if vix and vix.get('price') else 20
-    
-    print(f"SPY Performance: {spy_performance:.2f}%")
-    print(f"QQQ Performance: {qqq_performance:.2f}%")
-    print(f"VIX Level: {vix_level:.1f}")
-    
-    # Check if the issue is with change_percent vs change
-    if spy:
-        print(f"\nSPY raw data analysis:")
-        print(f"  change: {spy.get('change', 'N/A')}")
-        print(f"  change_percent: {spy.get('change_percent', 'N/A')}")
-        print(f"  price: {spy.get('price', 'N/A')}")
-    
-    if qqq:
-        print(f"\nQQQ raw data analysis:")
-        print(f"  change: {qqq.get('change', 'N/A')}")
-        print(f"  change_percent: {qqq.get('change_percent', 'N/A')}")
-        print(f"  price: {qqq.get('price', 'N/A')}")
-
-if __name__ == "__main__":
-    asyncio.run(test_market_data())
+if __name__ == '__main__':
+    asyncio.run(test())
