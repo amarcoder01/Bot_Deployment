@@ -8,11 +8,11 @@ openai==1.35.0
 # Configuration
 python-dotenv==1.0.0
 
+# Web Framework (Required for health checks)
+aiohttp==3.9.5
+
 # Production Server
 gunicorn==21.2.0
-
-# Temporarily removed to eliminate ALL build issues:
-# aiohttp==3.8.2  # May conflict with python-telegram-bot
 # SQLAlchemy==2.0.23  # May cause build issues
 # psycopg2-binary==2.9.9  # May cause build issues
 # python-dateutil==2.8.2  # May cause build issues
