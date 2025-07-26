@@ -1,17 +1,6 @@
-# Core Web Framework
-aiohttp==3.8.2
 
 # Telegram Bot
 python-telegram-bot==20.7
 
-# AI/ML Services
-openai==1.35.0
-
-# Database (Essential only)
-SQLAlchemy==2.0.23
-psycopg2-binary==2.9.9
-
-# Configuration & Environment
-python-dotenv==1.0.0
 
 
