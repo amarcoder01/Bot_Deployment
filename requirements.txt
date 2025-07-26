@@ -15,18 +15,3 @@ psycopg2-binary==2.9.9
 python-dotenv==1.0.0
 
 
-# Enhanced Visualization
-# seaborn==0.12.2  # Temporarily commented out for deployment stability
-
-# Portfolio Optimization (Lightweight alternatives)
-# riskfolio-lib==4.3.0  # Commented out - causes build issues on some platforms
-# cvxpy==1.4.1  # Commented out - requires complex compilation
-# scipy==1.11.4  # Temporarily commented out - may cause build issues
-
-# Machine Learning & NLP (Lightweight alternatives)
-# sentence-transformers==2.2.2  # Commented out - large dependency with torch
-# scikit-learn==1.3.2  # Temporarily commented out for deployment stability
-# nltk==3.8.1  # Temporarily commented out for deployment stability
-
-
-
