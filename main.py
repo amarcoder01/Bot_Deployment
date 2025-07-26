@@ -263,8 +263,13 @@ def create_app():
             except Exception as e:
                 logger.error(f"Bot initialization failed: {e}")
         
-        # Schedule bot initialization
-        asyncio.create_task(init_bot())
+        # Schedule bot initialization only if there's a running event loop
+        try:
+            loop = asyncio.get_running_loop()
+            asyncio.create_task(init_bot())
+        except RuntimeError:
+            # No running event loop, we'll initialize later
+            logger.info("No running event loop, bot will be initialized when needed")
     
     return app
 
