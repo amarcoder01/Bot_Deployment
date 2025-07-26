@@ -1,27 +1,22 @@
-# Core Web Framework
-aiohttp==3.8.2
-
-# Telegram Bot
+# Absolute minimal dependencies for deployment
+# Core Telegram Bot
 python-telegram-bot==20.7
 
-# AI/ML Services
+# AI Services
 openai==1.35.0
 
-# Database (Essential only)
-SQLAlchemy==2.0.23
-psycopg2-binary==2.9.9
-
-# Configuration & Environment
+# Configuration
 python-dotenv==1.0.0
-
-# Date/Time Handling
-python-dateutil==2.8.2
 
 # Production Server
 gunicorn==21.2.0
 
-# HTTP Client
-httpx==0.25.2
+# Temporarily removed to eliminate ALL build issues:
+# aiohttp==3.8.2  # May conflict with python-telegram-bot
+# SQLAlchemy==2.0.23  # May cause build issues
+# psycopg2-binary==2.9.9  # May cause build issues
+# python-dateutil==2.8.2  # May cause build issues
+# httpx==0.25.2  # May cause build issues
 
 # Temporarily commented out for deployment stability
 # pandas==2.0.3  # May cause build issues
